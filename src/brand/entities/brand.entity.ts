@@ -1,8 +1,10 @@
+import { User } from 'src/user/entities/user.entity';
 import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -23,4 +25,20 @@ export class Brand {
 
   @DeleteDateColumn()
   deletedAt: Date;
+
+  @ManyToOne(() => User, (user) => user.createdBrands, {
+    createForeignKeyConstraints: false,
+  })
+  createdBy: User;
+
+  @ManyToOne(() => User, (user) => user.updatedBrands, {
+    createForeignKeyConstraints: false,
+  })
+  updatedBy: User;
+
+  @Column()
+  createdById: number;
+
+  @Column()
+  updatedById: number;
 }

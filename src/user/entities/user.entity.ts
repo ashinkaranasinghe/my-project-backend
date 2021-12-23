@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Brand } from 'src/brand/entities/brand.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class User {
@@ -22,4 +23,10 @@ export class User {
 
   @Column()
   PhoneNo: string;
+
+  @OneToMany(() => Brand, (brand) => brand.createdBy)
+  createdBrands: Brand[];
+
+  @OneToMany(() => Brand, (brand) => brand.updatedBy)
+  updatedBrands: Brand[];
 }

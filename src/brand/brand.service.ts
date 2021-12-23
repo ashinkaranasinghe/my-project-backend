@@ -28,7 +28,7 @@ export class BrandService {
     return await this.brandRepository.update(id, updateBrandDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} customer`;
+  async remove(id: number) {
+    return await this.brandRepository.softDelete(id);
   }
 }
