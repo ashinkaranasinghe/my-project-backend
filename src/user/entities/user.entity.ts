@@ -1,4 +1,5 @@
-import { Brand } from 'src/brand/entities/brand.entity';
+import { Brand } from '../../brand/entities/brand.entity';
+import { Supplier } from '../../supplier/entities/supplier.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -29,4 +30,10 @@ export class User {
 
   @OneToMany(() => Brand, (brand) => brand.updatedBy)
   updatedBrands: Brand[];
+
+  @OneToMany(() => Supplier, (supplier) => supplier.createdBy)
+  createdSuppliers: Supplier[];
+
+  @OneToMany(() => Supplier, (supplier) => supplier.updatedBy)
+  updatedSuppliers: Supplier[];
 }
