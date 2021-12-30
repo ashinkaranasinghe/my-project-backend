@@ -1,4 +1,3 @@
-import { User } from 'src/user/entities/user.entity';
 import { Module } from '@nestjs/common';
 import { SupplierService } from './supplier.service';
 import { SupplierController } from './supplier.controller';

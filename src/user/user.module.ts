@@ -1,4 +1,3 @@
-import { Supplier } from './../supplier/entities/supplier.entity';
 import { User } from './../user/entities/user.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
