@@ -1,6 +1,6 @@
 {
     "type": "mysql",
-    "host": "localhost",
+    "host": "34.87.123.33",
     "port": 3306,
     "username": "root",
     "password": "",

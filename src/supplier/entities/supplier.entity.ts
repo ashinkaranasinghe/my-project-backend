@@ -9,7 +9,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-Entity();
+@Entity()
 export class Supplier {
   @PrimaryGeneratedColumn()
   id: number;
